@@ -1,0 +1,112 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 5% auto;
+  padding: 3%;
+  text-align: left;
+  width: 30rem;
+  border: 2px solid skyblue;
+  border-radius: 10px;
+}
+
+form h2 {
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+}
+
+form label {
+  display: flex;
+  margin: 3px;
+  padding: 2px;
+  justify-content: space-between;
+}
+
+form input {
+  width: 80%;
+}
+
+
+form button {
+  padding: 3px;
+  width: 20%;
+  align-self: center;
+  margin-top: 10px;
+}
+
+
+.team-member-container {
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    width: 30rem;
+    margin: 1rem auto;
+    /* box-shadow: 5px 5px 10px black; */
+    text-align: left;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* row, key-content, value-content*/
+.row {
+  display: flex;
+  margin: 1%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 1%;
+}
+
+.key-content {
+  width: 25%;
+  font-weight: 700;
+}
+
+.value-content {
+
+}
