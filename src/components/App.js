@@ -20,22 +20,37 @@ const initialFormValues = {
 function App() {
   const [teamMembers, setTeamMembers] = useState(myTeam);
   const [formValues, setFormValues] = useState(initialFormValues);
+  let key = 0;
 
-  console.log(teamMembers);
-
-  const change = (evt) => {
-
+  const update = (inputName, inputValue) => {
+    // set the form values
+    setFormValues({...formValues, [inputName]: inputValue});
   }
 
-  const submit = (evt) => {
+  const submit = () => {
+    // update key to be used for new person
+    key++;
+    // create a new object, set to the values
+    const newTeamMember = {
+      name: formValues.name,
+      email: formValues.email,
+      role: formValues.role,
+    }
+    // error catch
 
+    // setTeamMembers: teamMembers.concat(new object)
+    setTeamMembers(teamMembers.concat(newTeamMember));
+
+    // reset the form values to initial
+    setFormValues({name: "", email: "", role: ""});
   }
 
   return (
     <div className="App">
-      <Form formValues="formValues" change={change} submit={submit}/>
+      <Form formValues={formValues} update={update} submit={submit}/>
       {teamMembers.map((person, idx) => {
-        return <TeamMember teamMember={person} />
+        key++;
+        return <TeamMember teamMember={person} key={idx} />
       })}
     </div>
   );

@@ -2,7 +2,19 @@ import React, { useState } from 'react';
 
 
 export default function Form ( props ) {
-    const { formValues, change, submit } = props;
+    const { formValues, update, submit } = props;
+
+
+    const onChange = (evt) => {
+        const { name, value } = evt.target;
+        update(name, value);
+    }
+
+    const onSubmit = (evt) => {
+        evt.preventDefault();
+        submit();
+    }
+
 
     return(
         <form>
@@ -12,7 +24,8 @@ export default function Form ( props ) {
                     name="name"
                     type="text"
                     value={formValues.name}
-                    onChange={change}
+                    onChange={onChange}
+                    placeholder="Enter new team member name here."
                 />
             </label>
             <label><span className="input-key">Email:</span>  
@@ -20,18 +33,20 @@ export default function Form ( props ) {
                     name="email"
                     type="text"
                     value={formValues.email}
-                    onChange={change}
+                    onChange={onChange}
+                    placeholder="Enter new team member email here."
                 />
             </label>
             <label><span className="input-key">Role:</span> 
-                <input 
-                    name="role"
-                    type="text"
-                    value={formValues.role}
-                    onChange={change}
-                />
+                <select value={formValues.role} name="role" onChange={onChange}>
+                    <option value="">-----Select a Role-----</option>
+                    <option value="Student">Student</option>
+                    <option value="Junior Developer">Junior Developer</option>
+                    <option value="Senior Developer">Senior Developer</option>
+                    <option value="Team Manager">Team Manager</option>
+                </select>
             </label>
-            <button onClick={submit}>Submit</button>
+            <button onClick={onSubmit}>Submit</button>
         </form>
     )
 }
