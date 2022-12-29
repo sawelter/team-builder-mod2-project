@@ -36,7 +36,6 @@ function App() {
       email: formValues.email,
       role: formValues.role,
     }
-    // error catch
 
     // setTeamMembers: teamMembers.concat(new object)
     setTeamMembers(teamMembers.concat(newTeamMember));

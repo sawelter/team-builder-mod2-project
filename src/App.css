@@ -115,3 +115,9 @@ form button {
 .value-content {
 
 }
+
+.error {
+  color: red;
+  margin-bottom: 3rem;
+
+}
